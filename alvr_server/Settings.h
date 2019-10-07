@@ -139,6 +139,8 @@ public:
 
 	int32_t m_nAdapterIndex;
 
+	long debugFlags = 0;
+
 	uint64_t m_DriverTestMode = 0;
 
 	int m_refreshRate;

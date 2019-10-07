@@ -64,7 +64,7 @@ void Poller::RemoveSocket(SOCKET s, PollerSocketType type) {
 
 void Poller::WakeLater(uint64_t elapsedMs)
 {
-	mNextWake = 900LLU + GetTimestampUs();
+	mNextWake = 400LLU + GetTimestampUs();
 
 	//sendto(mQueueSocket, "1", 1, 0, (sockaddr *)&mQueueAddr, sizeof(mQueueAddr));
 }

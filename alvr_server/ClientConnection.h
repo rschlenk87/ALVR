@@ -15,6 +15,7 @@
 #include "Settings.h"
 #include "Statistics.h"
 #include "MicPlayer.h"
+#include "UdpThread.h"
 
 extern "C" {
 #include "reedsolomon/rs.h"
@@ -63,7 +64,7 @@ private:
 	bool m_bExiting;
 	bool m_Enabled;
 	std::shared_ptr<Poller> m_Poller;
-	std::shared_ptr<UdpSocket> m_Socket;
+	std::shared_ptr<UdpThread> m_Socket;
 	std::shared_ptr<ControlSocket> m_ControlSocket;
 	std::shared_ptr<Statistics> m_Statistics;
 	std::shared_ptr<MicPlayer> m_MicPlayer;

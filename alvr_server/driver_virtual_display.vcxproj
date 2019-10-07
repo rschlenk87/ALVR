@@ -120,6 +120,7 @@
     <ClCompile Include="Settings.cpp" />
     <ClCompile Include="ThrottlingBuffer.cpp" />
     <ClCompile Include="UdpSocket.cpp" />
+    <ClCompile Include="UdpThread.cpp" />
     <ClCompile Include="Utils.cpp" />
     <ClCompile Include="VideoEncoder.cpp" />
     <ClCompile Include="VideoEncoderNVENC.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="Statistics.h" />
     <ClInclude Include="ThrottlingBuffer.h" />
     <ClInclude Include="UdpSocket.h" />
+    <ClInclude Include="UdpThread.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="VideoEncoder.h" />
     <ClInclude Include="VideoEncoderNVENC.h" />

@@ -25,7 +25,7 @@ private:
 	SOCKET mQueueSocket;
 	sockaddr_in mQueueAddr;
 	uint64_t mNextWake = 0;
-	static const int DEFAULT_WAIT_TIME_US = 10 * 1000;
+	static const int DEFAULT_WAIT_TIME_US = 1 * 1000;
 
 	bool BindQueueSocket();
 	void ReadQueueSocket();
