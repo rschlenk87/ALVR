@@ -5,28 +5,23 @@
 #include "ThrottlingBuffer.h"
 #include "Logger.h"
 #include <functional>
+#include "UdpInterface.h"
 
 
-class UdpThread : public CThread
+class UdpThread : public CThread, public UdpInterface
 {
 public:
-	UdpThread(std::string host, int port, std::shared_ptr<Statistics> statistics, const Bitrate& bitrate);
+	UdpThread(std::string host, int port, std::shared_ptr<Statistics> statistics);
 	virtual ~UdpThread();
 
 
-	virtual bool Send(char* buf, int len, uint64_t frameIndex = 0);
+	bool Send(char* buf, int len, uint64_t frameIndex = 0);
 
-	virtual void Run();
+	void Run();
 
-	virtual void Shutdown();
+	 void Shutdown();
+	 bool Startup();
 
-
-	bool IsLegitClient(const sockaddr_in* addr);
-	void InvalidateClient();
-	virtual bool IsClientValid()const;
-
-	virtual sockaddr_in GetClientAddr()const;
-	void SetClientAddr(const sockaddr_in* addr);
 
 	void setPacketCallback(std::function<void(char*, int ,sockaddr_in*)> callback);
 
@@ -36,14 +31,8 @@ private:
 
 
 	std::function<void(char*, int, sockaddr_in*)> m_packetCallback;
-	std::string mHost;
-	int mPort;
+	
 
-	SOCKET mSocket;
-	sockaddr_in mClientAddr;
-	std::shared_ptr<Statistics> mStatistics;
-
-	ThrottlingBuffer mBuffer;
 
 	bool m_bExit;
 

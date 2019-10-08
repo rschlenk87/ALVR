@@ -1,16 +1,15 @@
 #include "UdpThread.h"
 #include "ClientConnection.h"
 
-UdpThread::UdpThread(std::string host, int port, std::shared_ptr<Statistics> statistics, const Bitrate& bitrate)
-	: mHost(host)
-	, mPort(port)
-	, mSocket(INVALID_SOCKET)
-	, mStatistics(statistics)
-	, mBuffer(bitrate)
-	, m_bExit(false)
-
+UdpThread::UdpThread(std::string host, int port, std::shared_ptr<Statistics> statistics)
+	: m_bExit(false)
 
 {
+	Log(L"Using async communication");
+	mHost = host;
+	mPort = port;
+	mSocket = INVALID_SOCKET;
+	mStatistics = statistics;
 	mClientAddr.sin_family = 0;
 	BindSocket();
 }
@@ -86,19 +85,9 @@ bool UdpThread::BindSocket()
 	return true;
 }
 
-bool UdpThread::IsLegitClient(const sockaddr_in* addr)
-{
-	if (mClientAddr.sin_family == AF_INET && mClientAddr.sin_addr.S_un.S_addr == addr->sin_addr.S_un.S_addr && mClientAddr.sin_port == addr->sin_port) {
-		return true;
-	}
-	else {
-		return false;
-	}
-}
 
-bool UdpThread::IsClientValid()const {
-	return mClientAddr.sin_family != 0;
-}
+
+
 
 bool UdpThread::Send(char* buf, int len, uint64_t frameIndex) {
 
@@ -114,21 +103,15 @@ bool UdpThread::Send(char* buf, int len, uint64_t frameIndex) {
 	return true;
 }
 
-void UdpThread::InvalidateClient()
-{
-	mClientAddr.sin_family = 0;
-}
-sockaddr_in UdpThread::GetClientAddr() const {
-	return mClientAddr;
-}
-
-void UdpThread::SetClientAddr(const sockaddr_in* addr)
-{
-	mClientAddr = *addr;
-}
 
 void UdpThread::setPacketCallback(std::function<void(char*, int, sockaddr_in*)> callback) {
 	m_packetCallback = callback;
+	
+}
+
+bool UdpThread::Startup() {
+	this->Start();
+	return true;
 }
 
 

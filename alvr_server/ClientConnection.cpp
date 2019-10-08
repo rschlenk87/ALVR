@@ -65,15 +65,22 @@ bool ClientConnection::Startup() {
 		m_Force3DOF = Settings::Instance().m_force3DOF;
 		m_Enabled = true;
 
-		
-		m_Socket = std::make_shared<UdpThread>(Settings::Instance().m_Host, Settings::Instance().m_Port
-			, m_Statistics, Settings::Instance().mThrottlingBitrate);
+		if (Settings::Instance().m_useUdpThread) {
+			m_Socket = std::make_shared<UdpThread>(Settings::Instance().m_Host, Settings::Instance().m_Port
+				, m_Statistics);
 
-		std::function<void(char*, int, sockaddr_in*)> processRecv = [&](char* buf, int len, sockaddr_in* addr) { ProcessRecv(buf, len,addr); };
-		m_Socket->setPacketCallback(processRecv);
-
-		m_Socket->Start();
-		
+			std::function<void(char*, int, sockaddr_in*)> processRecv = [&](char* buf, int len, sockaddr_in* addr) { ProcessRecv(buf, len, addr); };
+			m_Socket->setPacketCallback(processRecv);
+			m_Socket->Startup();
+			
+		}
+		else {
+			m_Socket = std::make_shared<UdpSocket>(Settings::Instance().m_Host, Settings::Instance().m_Port
+				, m_Poller, m_Statistics, Settings::Instance().mThrottlingBitrate);
+			if (!m_Socket->Startup()) {
+				return false;
+			}
+		}
 	}
 	// Start thread.
 	Start();
@@ -84,44 +91,45 @@ void ClientConnection::Run() {
 	while (!m_bExiting) {
 		CheckTimeout();
 		if (m_Poller->Do() == 0) {
-			
-			
+			if (m_Socket && !Settings::Instance().m_useUdpThread) {
+				m_Socket->Run();
+			}
 			continue;
 		}
 
-		/*
-		if (m_Socket) {
+		if (m_Socket && !Settings::Instance().m_useUdpThread) {
 			sockaddr_in addr;
 			int addrlen = sizeof(addr);
 			char buf[2000];
 			int len = sizeof(buf);
 			if (m_Socket->Recv(buf, &len, &addr, addrlen)) {
-				auto t1 = std::chrono::high_resolution_clock::now();
 				ProcessRecv(buf, len, &addr);
-				auto t2 = std::chrono::high_resolution_clock::now();
-				auto duration = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
-
-				if (duration > 1000) {
-					Log("SLOW execution, took: %lld", duration);
-				}
-
-
 			}
 			m_Socket->Run();
 		}
-		*/
 
 		if (m_ControlSocket->Accept()) {
 			if (!m_Enabled) {
 				m_Enabled = true;
 				Settings::Instance().Load();
-				m_Socket = std::make_shared<UdpThread>(Settings::Instance().m_Host, Settings::Instance().m_Port
-					, m_Statistics, Settings::Instance().mThrottlingBitrate);
 
-				std::function<void(char*, int, sockaddr_in*)> processRecv = [&](char* buf, int len, sockaddr_in* addr) { ProcessRecv(buf, len, addr); };
-				m_Socket->setPacketCallback(processRecv);
+				if (Settings::Instance().m_useUdpThread) {
+					m_Socket = std::make_shared<UdpThread>(Settings::Instance().m_Host, Settings::Instance().m_Port
+						, m_Statistics);
 
-				m_Socket->Start();
+					std::function<void(char*, int, sockaddr_in*)> processRecv = [&](char* buf, int len, sockaddr_in* addr) { ProcessRecv(buf, len, addr); };
+					m_Socket->setPacketCallback(processRecv);
+					m_Socket->Startup();
+				}
+				else {
+					m_Socket = std::make_shared<UdpSocket>(Settings::Instance().m_Host, Settings::Instance().m_Port
+						, m_Poller, m_Statistics, Settings::Instance().mThrottlingBitrate);
+					if (!m_Socket->Startup()) {
+						return;
+					}
+				}
+
+
 			}
 			m_LauncherCallback();
 		}

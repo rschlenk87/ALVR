@@ -119,6 +119,7 @@
     <ClCompile Include="Poller.cpp" />
     <ClCompile Include="Settings.cpp" />
     <ClCompile Include="ThrottlingBuffer.cpp" />
+    <ClCompile Include="UdpInterface.cpp" />
     <ClCompile Include="UdpSocket.cpp" />
     <ClCompile Include="UdpThread.cpp" />
     <ClCompile Include="Utils.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="Settings.h" />
     <ClInclude Include="Statistics.h" />
     <ClInclude Include="ThrottlingBuffer.h" />
+    <ClInclude Include="UdpInterface.h" />
     <ClInclude Include="UdpSocket.h" />
     <ClInclude Include="UdpThread.h" />
     <ClInclude Include="Utils.h" />

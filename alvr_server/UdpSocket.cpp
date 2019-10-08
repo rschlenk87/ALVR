@@ -4,14 +4,18 @@
 #include "Settings.h"
 
 UdpSocket::UdpSocket(std::string host, int port, std::shared_ptr<Poller> poller, std::shared_ptr<Statistics> statistics, const Bitrate &bitrate)
-	: mHost(host)
-	, mPort(port)
-	, mSocket(INVALID_SOCKET)
-	, mPoller(poller)
-	, mStatistics(statistics)
+	: mPoller(poller)
 	, mBuffer(bitrate)
 	
 {
+	Log(L"Using polling communication");
+
+	mHost = host;
+	mPort = port;
+	mSocket = INVALID_SOCKET;
+	mStatistics = statistics;
+
+
 	mClientAddr.sin_family = 0;
 }
 
@@ -36,29 +40,6 @@ bool UdpSocket::Startup() {
 	return true;
 }
 
-sockaddr_in UdpSocket::GetClientAddr()const {
-	return mClientAddr;
-}
-
-
-bool UdpSocket::IsClientValid()const {
-	return mClientAddr.sin_family != 0;
-}
-
-bool UdpSocket::IsLegitClient(const sockaddr_in * addr)
-{
-	if (mClientAddr.sin_family == AF_INET && mClientAddr.sin_addr.S_un.S_addr == addr->sin_addr.S_un.S_addr && mClientAddr.sin_port == addr->sin_port) {
-		return true;
-	}
-	else {
-		return false;
-	}
-}
-
-void UdpSocket::InvalidateClient()
-{
-	mClientAddr.sin_family = 0;
-}
 
 bool UdpSocket::Recv(char *buf, int *buflen, sockaddr_in *addr, int addrlen) {
 	bool ret = false;
@@ -95,11 +76,6 @@ void UdpSocket::Shutdown() {
 		closesocket(mSocket);
 	}
 	mSocket = INVALID_SOCKET;
-}
-
-void UdpSocket::SetClientAddr(const sockaddr_in * addr)
-{
-	mClientAddr = *addr;
 }
 
 bool UdpSocket::BindSocket()

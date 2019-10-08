@@ -71,7 +71,7 @@ static const char * const k_pch_Settings_ControllerRegisteredDeviceType_String =
 static const char * const k_pch_Settings_ControllerLegacyInputProfile_String = "controllerLegacyInputProfile";
 static const char * const k_pch_Settings_ControllerInputProfilePath_String = "controllerInputProfilePath";
 
-
+static const char* const k_pch_Settings_UseUdpThread_Bool = "useUdpThread";
 static const char * const k_pch_Settings_DisableController_Bool = "disableController";
 static const char * const k_pch_Settings_ControllerTriggerMode_Int32 = "controllerTriggerMode";
 static const char * const k_pch_Settings_ControllerTrackpadClickMode_Int32 = "controllerTrackpadClickMode";
@@ -181,6 +181,8 @@ public:
 	bool m_DebugFrameOutput;
 	bool m_DebugCaptureOutput;
 	bool m_UseKeyedMutex;
+
+	bool m_useUdpThread = false;
 
 
 	uint64_t m_SendingTimeslotUs;
