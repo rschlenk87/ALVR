@@ -276,7 +276,7 @@
             // noClientLabel
             // 
             this.noClientLabel.AutoSize = true;
-            this.noClientLabel.Location = new System.Drawing.Point(141, 115);
+            this.noClientLabel.Location = new System.Drawing.Point(117, 116);
             this.noClientLabel.Name = "noClientLabel";
             this.noClientLabel.Size = new System.Drawing.Size(211, 95);
             this.noClientLabel.TabIndex = 10;
@@ -289,6 +289,7 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -326,7 +327,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowHeadersWidth = 40;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
@@ -344,7 +345,6 @@
             this.NameColumn.MinimumWidth = 6;
             this.NameColumn.Name = "NameColumn";
             this.NameColumn.ReadOnly = true;
-            this.NameColumn.Width = 125;
             // 
             // AddressColumn
             // 
@@ -352,7 +352,6 @@
             this.AddressColumn.MinimumWidth = 6;
             this.AddressColumn.Name = "AddressColumn";
             this.AddressColumn.ReadOnly = true;
-            this.AddressColumn.Width = 125;
             // 
             // refreshRateColumn
             // 
@@ -360,7 +359,6 @@
             this.refreshRateColumn.MinimumWidth = 6;
             this.refreshRateColumn.Name = "refreshRateColumn";
             this.refreshRateColumn.ReadOnly = true;
-            this.refreshRateColumn.Width = 55;
             // 
             // Button
             // 
@@ -369,7 +367,6 @@
             this.Button.Name = "Button";
             this.Button.ReadOnly = true;
             this.Button.Text = "Connect";
-            this.Button.Width = 135;
             // 
             // metroProgressSpinner2
             // 
@@ -649,14 +646,14 @@
             // foveationComboBox
             // 
             this.foveationComboBox.FormattingEnabled = true;
-            this.foveationComboBox.ItemHeight = 24;
+            this.foveationComboBox.ItemHeight = 23;
             this.foveationComboBox.Items.AddRange(new object[] {
             "Disabled",
             "Slices",
             "Warp"});
             this.foveationComboBox.Location = new System.Drawing.Point(254, 261);
             this.foveationComboBox.Name = "foveationComboBox";
-            this.foveationComboBox.Size = new System.Drawing.Size(192, 30);
+            this.foveationComboBox.Size = new System.Drawing.Size(192, 29);
             this.foveationComboBox.TabIndex = 24;
             this.foveationComboBox.SelectedIndexChanged += new System.EventHandler(this.FoveationComboBox_SelectedIndexChanged);
             // 
@@ -798,10 +795,10 @@
             // codecComboBox
             // 
             this.codecComboBox.FormattingEnabled = true;
-            this.codecComboBox.ItemHeight = 24;
+            this.codecComboBox.ItemHeight = 23;
             this.codecComboBox.Location = new System.Drawing.Point(254, 14);
             this.codecComboBox.Name = "codecComboBox";
-            this.codecComboBox.Size = new System.Drawing.Size(192, 30);
+            this.codecComboBox.Size = new System.Drawing.Size(192, 29);
             this.codecComboBox.TabIndex = 6;
             this.codecComboBox.SelectedIndexChanged += new System.EventHandler(this.codecComboBox_SelectedIndexChanged);
             // 
@@ -810,7 +807,7 @@
             this.resolutionComboBox.DisplayMember = "width";
             this.resolutionComboBox.FontSize = MetroFramework.MetroLinkSize.Small;
             this.resolutionComboBox.FormattingEnabled = true;
-            this.resolutionComboBox.ItemHeight = 21;
+            this.resolutionComboBox.ItemHeight = 19;
             this.resolutionComboBox.Items.AddRange(new object[] {
             "25%",
             "50%",
@@ -822,7 +819,7 @@
             "200%"});
             this.resolutionComboBox.Location = new System.Drawing.Point(254, 137);
             this.resolutionComboBox.Name = "resolutionComboBox";
-            this.resolutionComboBox.Size = new System.Drawing.Size(192, 27);
+            this.resolutionComboBox.Size = new System.Drawing.Size(192, 25);
             this.resolutionComboBox.TabIndex = 6;
             this.resolutionComboBox.ValueMember = "width";
             this.resolutionComboBox.SelectedIndexChanged += new System.EventHandler(this.resolutionComboBox_SelectedIndexChanged);
@@ -1040,10 +1037,10 @@
             // soundDeviceComboBox
             // 
             this.soundDeviceComboBox.FormattingEnabled = true;
-            this.soundDeviceComboBox.ItemHeight = 24;
+            this.soundDeviceComboBox.ItemHeight = 23;
             this.soundDeviceComboBox.Location = new System.Drawing.Point(76, 126);
             this.soundDeviceComboBox.Name = "soundDeviceComboBox";
-            this.soundDeviceComboBox.Size = new System.Drawing.Size(471, 30);
+            this.soundDeviceComboBox.Size = new System.Drawing.Size(471, 29);
             this.soundDeviceComboBox.TabIndex = 3;
             // 
             // streamMic
@@ -1128,7 +1125,7 @@
             this.udpThreadCheckbox.Checked = global::ALVR.Properties.Settings.Default.useUdpThread;
             this.udpThreadCheckbox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::ALVR.Properties.Settings.Default, "useUdpThread", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.udpThreadCheckbox.Location = new System.Drawing.Point(407, 166);
-            this.udpThreadCheckbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.udpThreadCheckbox.Margin = new System.Windows.Forms.Padding(2);
             this.udpThreadCheckbox.Name = "udpThreadCheckbox";
             this.udpThreadCheckbox.Size = new System.Drawing.Size(163, 15);
             this.udpThreadCheckbox.TabIndex = 36;
