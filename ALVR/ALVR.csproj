@@ -24,7 +24,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -113,6 +113,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="alvr_256.ico" />
+    <None Include="Resources\alvr_256.bmp" />
     <None Include="Resources\LICENSE.txt" />
     <None Include="Resources\alvr-128.png" />
     <None Include="Resources\web_hi_res_512.png" />
