@@ -12,10 +12,10 @@ AppId={{1CF58A59-F188-42FA-ADE3-D58A50AE7149}
 AppName=ALVR
 AppVersion={#ApplicationVersion}
 AppVerName=ALVR
-AppPublisher=polygraphene
-AppPublisherURL=https://github.com/polygraphene/ALVR
-AppSupportURL=https://github.com/polygraphene/ALVR
-AppUpdatesURL=https://github.com/polygraphene/ALVR
+AppPublisher=vwlp37b
+AppPublisherURL=
+AppSupportURL=
+AppUpdatesURL=
 DefaultDirName={pf}\ALVR
 DefaultGroupName=ALVR
 LicenseFile=..\LICENSE
@@ -39,7 +39,6 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Source: "..\ALVR\bin\Release\ALVR.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\ALVR\bin\Release\MetroFramework.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\ALVR\bin\Release\MetroFramework.Fonts.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\ALVRFreePIE\bin\Release\ALVRFreePIE.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\CrashReport\bin\Release\CrashReport.exe"; DestDir: "{app}"; Flags: ignoreversion
 
 Source: "..\driver\*"; DestDir: "{app}\driver\"; Flags: ignoreversion recursesubdirs createallsubdirs   
@@ -47,9 +46,6 @@ Source: "..\driver\*"; DestDir: "{app}\driver\"; Flags: ignoreversion recursesub
 Source: "..\libswresample\lib\avutil-56.dll"; DestDir: "{app}\driver\bin\win64"; Flags: ignoreversion
 Source: "..\libswresample\lib\swresample-3.dll"; DestDir: "{app}\driver\bin\win64"; Flags: ignoreversion
 
-Source: "..\freepie-samples\*"; DestDir: "{app}\freepie-samples\"; Flags: ignoreversion recursesubdirs createallsubdirs
-
-Source: "..\ALVRFreePIE\bin\Release\ALVRFreePIE.dll"; DestDir: "{pf32}\FreePIE\plugins"; Flags: ignoreversion; Check: DirExists(ExpandConstant('{pf32}\FreePIE\plugins'))
 Source: "..\add_firewall_rules.bat"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\remove_firewall_rules.bat"; DestDir: "{app}"; Flags: ignoreversion
 
