@@ -920,5 +920,25 @@ namespace ALVR
         {
             foveationVerticalOffsetLabel.Text = (foveationVerticalOffsetTrackBar.Value / 100f).ToString();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void versionLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel14_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
