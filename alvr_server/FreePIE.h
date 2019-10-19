@@ -63,15 +63,7 @@ public:
 	};
 #pragma pack(pop)
 
-	FreePIE()
-		: m_fileMapping(ALVR_FREEPIE_FILEMAPPING_NAME, sizeof(FreePIEFileMapping))
-		, m_mutex(ALVR_FREEPIE_MUTEX_NAME) {
 
-		
-		Initialize();
-	}
-	~FreePIE() {
-	}
 	/*
 	void UpdateTrackingInfoByFreePIE(const TrackingInfo &info, vr::HmdQuaternion_t &head_orientation
 		, vr::HmdQuaternion_t controller_orientation[TrackingInfo::MAX_CONTROLLERS]
