@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ALVR.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AirQuest.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="bufferSize" Type="System.Int32" Scope="User">
@@ -63,7 +63,7 @@
       <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="suppressFrameDrop" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="controllerBackMode" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
@@ -78,7 +78,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="disableThrottling" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="controllerPoseOffset" Type="System.String" Scope="User">
       <Value Profile="(Default)">0.01</Value>
@@ -87,7 +87,7 @@
       <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="streamMic" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="force3DOF" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -96,10 +96,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="foveationStrength" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">200</Value>
-    </Setting>
-    <Setting Name="foveationMode" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">250</Value>
     </Setting>
     <Setting Name="foveationVerticalOffset" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
@@ -112,6 +109,9 @@
     </Setting>
     <Setting Name="aggressiveKeyframeResend" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="foveationMode" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
     </Setting>
   </Settings>
 </SettingsFile>

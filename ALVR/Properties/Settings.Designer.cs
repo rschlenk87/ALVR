@@ -265,7 +265,7 @@ namespace ALVR.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool suppressFrameDrop {
             get {
                 return ((bool)(this["suppressFrameDrop"]));
@@ -324,7 +324,7 @@ namespace ALVR.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool disableThrottling {
             get {
                 return ((bool)(this["disableThrottling"]));
@@ -360,7 +360,7 @@ namespace ALVR.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool streamMic {
             get {
                 return ((bool)(this["streamMic"]));
@@ -396,25 +396,13 @@ namespace ALVR.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        [global::System.Configuration.DefaultSettingValueAttribute("250")]
         public int foveationStrength {
             get {
                 return ((int)(this["foveationStrength"]));
             }
             set {
                 this["foveationStrength"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int foveationMode {
-            get {
-                return ((int)(this["foveationMode"]));
-            }
-            set {
-                this["foveationMode"] = value;
             }
         }
         
@@ -463,6 +451,18 @@ namespace ALVR.Properties {
             }
             set {
                 this["aggressiveKeyframeResend"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int foveationMode {
+            get {
+                return ((int)(this["foveationMode"]));
+            }
+            set {
+                this["foveationMode"] = value;
             }
         }
     }

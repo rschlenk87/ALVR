@@ -940,5 +940,25 @@ namespace ALVR
         {
 
         }
+
+        private void serverTab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void licenseTextBox_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

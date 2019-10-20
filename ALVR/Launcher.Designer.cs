@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Launcher));
             this.sendClientDebugFlagsButton = new MetroFramework.Controls.MetroButton();
             this.sendDriverTestModeButton = new MetroFramework.Controls.MetroButton();
@@ -163,6 +163,9 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
             this.metroTabControl1.SuspendLayout();
             this.serverTab.SuspendLayout();
             this.findingPanel.SuspendLayout();
@@ -177,6 +180,8 @@
             this.aboutTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resolutionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // sendClientDebugFlagsButton
@@ -218,14 +223,14 @@
             // metroTabControl1
             // 
             this.metroTabControl1.Controls.Add(this.serverTab);
+            this.metroTabControl1.Controls.Add(this.debugTab);
             this.metroTabControl1.Controls.Add(this.videoTab);
             this.metroTabControl1.Controls.Add(this.soundTab);
             this.metroTabControl1.Controls.Add(this.otherTab);
-            this.metroTabControl1.Controls.Add(this.debugTab);
             this.metroTabControl1.Controls.Add(this.aboutTab);
             this.metroTabControl1.Location = new System.Drawing.Point(23, 68);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 5;
             this.metroTabControl1.Size = new System.Drawing.Size(664, 450);
             this.metroTabControl1.TabIndex = 8;
             // 
@@ -242,6 +247,7 @@
             this.serverTab.TabIndex = 3;
             this.serverTab.Text = "Server";
             this.serverTab.VerticalScrollbarBarColor = true;
+            this.serverTab.Click += new System.EventHandler(this.serverTab_Click);
             // 
             // findingPanel
             // 
@@ -290,14 +296,14 @@
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ColumnHeadersVisible = false;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -305,30 +311,30 @@
             this.AddressColumn,
             this.refreshRateColumn,
             this.Button});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(29, 30);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.dataGridView1.RowTemplate.Height = 40;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -422,7 +428,7 @@
             this.autoConnectCheckBox.AutoSize = true;
             this.autoConnectCheckBox.Location = new System.Drawing.Point(73, 221);
             this.autoConnectCheckBox.Name = "autoConnectCheckBox";
-            this.autoConnectCheckBox.Size = new System.Drawing.Size(147, 15);
+            this.autoConnectCheckBox.Size = new System.Drawing.Size(148, 15);
             this.autoConnectCheckBox.TabIndex = 13;
             this.autoConnectCheckBox.Text = "Auto connect next time";
             this.autoConnectCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -435,38 +441,38 @@
             this.statDataGridView.AllowUserToDeleteRows = false;
             this.statDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.statDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.statDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.statDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.statDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.statDataGridView.ColumnHeadersVisible = false;
             this.statDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Name1,
             this.Value1});
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.statDataGridView.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.statDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.statDataGridView.Location = new System.Drawing.Point(282, 30);
             this.statDataGridView.Name = "statDataGridView";
             this.statDataGridView.ReadOnly = true;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.statDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.statDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.statDataGridView.RowHeadersVisible = false;
             this.statDataGridView.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.White;
             this.statDataGridView.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
@@ -925,7 +931,6 @@
             // foveationVerticalOffsetTrackBar
             // 
             this.foveationVerticalOffsetTrackBar.BackColor = System.Drawing.Color.Transparent;
-            this.foveationVerticalOffsetTrackBar.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::ALVR.Properties.Settings.Default, "foveationVerticalOffset", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.foveationVerticalOffsetTrackBar.LargeChange = 2;
             this.foveationVerticalOffsetTrackBar.Location = new System.Drawing.Point(185, 343);
             this.foveationVerticalOffsetTrackBar.Maximum = 10;
@@ -935,13 +940,12 @@
             this.foveationVerticalOffsetTrackBar.Size = new System.Drawing.Size(368, 25);
             this.foveationVerticalOffsetTrackBar.TabIndex = 34;
             this.foveationVerticalOffsetTrackBar.Text = "metroTrackBar1";
-            this.foveationVerticalOffsetTrackBar.Value = global::ALVR.Properties.Settings.Default.foveationVerticalOffset;
+            this.foveationVerticalOffsetTrackBar.Value = 10;
             this.foveationVerticalOffsetTrackBar.ValueChanged += new System.EventHandler(this.FoveationVerticalOffsetTrackBar_ValueChanged);
             // 
             // foveationStrengthTrackBar
             // 
             this.foveationStrengthTrackBar.BackColor = System.Drawing.Color.Transparent;
-            this.foveationStrengthTrackBar.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::ALVR.Properties.Settings.Default, "foveationStrength", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.foveationStrengthTrackBar.LargeChange = 100;
             this.foveationStrengthTrackBar.Location = new System.Drawing.Point(185, 306);
             this.foveationStrengthTrackBar.Maximum = 500;
@@ -950,25 +954,21 @@
             this.foveationStrengthTrackBar.SmallChange = 10;
             this.foveationStrengthTrackBar.TabIndex = 30;
             this.foveationStrengthTrackBar.Text = "metroTrackBar1";
-            this.foveationStrengthTrackBar.Value = global::ALVR.Properties.Settings.Default.foveationStrength;
             this.foveationStrengthTrackBar.ValueChanged += new System.EventHandler(this.FoveationStrengthTrackBar_ValueChanged);
             // 
             // bufferTrackBar
             // 
             this.bufferTrackBar.BackColor = System.Drawing.Color.Transparent;
-            this.bufferTrackBar.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::ALVR.Properties.Settings.Default, "bufferSize", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.bufferTrackBar.Location = new System.Drawing.Point(185, 211);
             this.bufferTrackBar.Name = "bufferTrackBar";
             this.bufferTrackBar.Size = new System.Drawing.Size(368, 25);
             this.bufferTrackBar.TabIndex = 2;
             this.bufferTrackBar.Text = "metroTrackBar1";
-            this.bufferTrackBar.Value = global::ALVR.Properties.Settings.Default.bufferSize;
             this.bufferTrackBar.ValueChanged += new System.EventHandler(this.bufferTrackBar_ValueChanged);
             // 
             // bitrateTrackBar
             // 
             this.bitrateTrackBar.BackColor = System.Drawing.Color.Transparent;
-            this.bitrateTrackBar.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::ALVR.Properties.Settings.Default, "bitrate", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.bitrateTrackBar.Location = new System.Drawing.Point(185, 81);
             this.bitrateTrackBar.Maximum = 250;
             this.bitrateTrackBar.Minimum = 1;
@@ -976,7 +976,6 @@
             this.bitrateTrackBar.Size = new System.Drawing.Size(368, 25);
             this.bitrateTrackBar.TabIndex = 2;
             this.bitrateTrackBar.Text = "metroTrackBar1";
-            this.bitrateTrackBar.Value = global::ALVR.Properties.Settings.Default.bitrate;
             this.bitrateTrackBar.ValueChanged += new System.EventHandler(this.bitrateTrackBar_ValueChanged);
             // 
             // soundTab
@@ -1038,9 +1037,8 @@
             // defaultSoundDeviceCheckBox
             // 
             this.defaultSoundDeviceCheckBox.AutoSize = true;
-            this.defaultSoundDeviceCheckBox.Checked = global::ALVR.Properties.Settings.Default.useDefaultSoundDevice;
+            this.defaultSoundDeviceCheckBox.Checked = true;
             this.defaultSoundDeviceCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.defaultSoundDeviceCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::ALVR.Properties.Settings.Default, "useDefaultSoundDevice", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.defaultSoundDeviceCheckBox.Location = new System.Drawing.Point(53, 83);
             this.defaultSoundDeviceCheckBox.Name = "defaultSoundDeviceCheckBox";
             this.defaultSoundDeviceCheckBox.Size = new System.Drawing.Size(119, 15);
@@ -1052,8 +1050,8 @@
             // streamMic
             // 
             this.streamMic.AutoSize = true;
-            this.streamMic.Checked = global::ALVR.Properties.Settings.Default.streamMic;
-            this.streamMic.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::ALVR.Properties.Settings.Default, "streamMic", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.streamMic.Checked = true;
+            this.streamMic.CheckState = System.Windows.Forms.CheckState.Checked;
             this.streamMic.Location = new System.Drawing.Point(30, 193);
             this.streamMic.Name = "streamMic";
             this.streamMic.Size = new System.Drawing.Size(162, 15);
@@ -1065,9 +1063,8 @@
             // soundCheckBox
             // 
             this.soundCheckBox.AutoSize = true;
-            this.soundCheckBox.Checked = global::ALVR.Properties.Settings.Default.enableSound;
+            this.soundCheckBox.Checked = true;
             this.soundCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.soundCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::ALVR.Properties.Settings.Default, "enableSound", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.soundCheckBox.Location = new System.Drawing.Point(30, 38);
             this.soundCheckBox.Name = "soundCheckBox";
             this.soundCheckBox.Size = new System.Drawing.Size(92, 15);
@@ -1217,8 +1214,6 @@
             // disableController
             // 
             this.disableController.AutoSize = true;
-            this.disableController.Checked = global::ALVR.Properties.Settings.Default.disableController;
-            this.disableController.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::ALVR.Properties.Settings.Default, "disableController", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.disableController.Location = new System.Drawing.Point(407, 101);
             this.disableController.Name = "disableController";
             this.disableController.Size = new System.Drawing.Size(115, 15);
@@ -1229,8 +1224,6 @@
             // force60HzCheckBox
             // 
             this.force60HzCheckBox.AutoSize = true;
-            this.force60HzCheckBox.Checked = global::ALVR.Properties.Settings.Default.force60Hz;
-            this.force60HzCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::ALVR.Properties.Settings.Default, "force60Hz", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.force60HzCheckBox.Location = new System.Drawing.Point(407, 59);
             this.force60HzCheckBox.Name = "force60HzCheckBox";
             this.force60HzCheckBox.Size = new System.Drawing.Size(81, 15);
@@ -1241,9 +1234,8 @@
             // aggressiveKeyframeResend
             // 
             this.aggressiveKeyframeResend.AutoSize = true;
-            this.aggressiveKeyframeResend.Checked = global::ALVR.Properties.Settings.Default.aggressiveKeyframeResend;
+            this.aggressiveKeyframeResend.Checked = true;
             this.aggressiveKeyframeResend.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.aggressiveKeyframeResend.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::ALVR.Properties.Settings.Default, "aggressiveKeyframeResend", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.aggressiveKeyframeResend.Location = new System.Drawing.Point(407, 144);
             this.aggressiveKeyframeResend.Name = "aggressiveKeyframeResend";
             this.aggressiveKeyframeResend.Size = new System.Drawing.Size(170, 15);
@@ -1254,8 +1246,6 @@
             // force3DOFCheckBox
             // 
             this.force3DOFCheckBox.AutoSize = true;
-            this.force3DOFCheckBox.Checked = global::ALVR.Properties.Settings.Default.force3DOF;
-            this.force3DOFCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::ALVR.Properties.Settings.Default, "force3DOF", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.force3DOFCheckBox.Location = new System.Drawing.Point(407, 122);
             this.force3DOFCheckBox.Name = "force3DOFCheckBox";
             this.force3DOFCheckBox.Size = new System.Drawing.Size(84, 15);
@@ -1266,8 +1256,8 @@
             // disableThrottlingCheckBox
             // 
             this.disableThrottlingCheckBox.AutoSize = true;
-            this.disableThrottlingCheckBox.Checked = global::ALVR.Properties.Settings.Default.disableThrottling;
-            this.disableThrottlingCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::ALVR.Properties.Settings.Default, "disableThrottling", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.disableThrottlingCheckBox.Checked = true;
+            this.disableThrottlingCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.disableThrottlingCheckBox.Location = new System.Drawing.Point(407, 80);
             this.disableThrottlingCheckBox.Name = "disableThrottlingCheckBox";
             this.disableThrottlingCheckBox.Size = new System.Drawing.Size(142, 15);
@@ -1278,8 +1268,8 @@
             // suppressFrameDropCheckBox
             // 
             this.suppressFrameDropCheckBox.AutoSize = true;
-            this.suppressFrameDropCheckBox.Checked = global::ALVR.Properties.Settings.Default.suppressFrameDrop;
-            this.suppressFrameDropCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::ALVR.Properties.Settings.Default, "suppressFrameDrop", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.suppressFrameDropCheckBox.Checked = true;
+            this.suppressFrameDropCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.suppressFrameDropCheckBox.Location = new System.Drawing.Point(407, 38);
             this.suppressFrameDropCheckBox.Name = "suppressFrameDropCheckBox";
             this.suppressFrameDropCheckBox.Size = new System.Drawing.Size(132, 15);
@@ -1290,47 +1280,38 @@
             // 
             // controllerPoseOffset
             // 
-            this.controllerPoseOffset.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::ALVR.Properties.Settings.Default, "controllerPoseOffset", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.controllerPoseOffset.Location = new System.Drawing.Point(187, 27);
             this.controllerPoseOffset.Name = "controllerPoseOffset";
             this.controllerPoseOffset.Size = new System.Drawing.Size(52, 19);
             this.controllerPoseOffset.TabIndex = 21;
-            this.controllerPoseOffset.Text = global::ALVR.Properties.Settings.Default.controllerPoseOffset;
             this.controllerPoseOffset.Click += new System.EventHandler(this.controllerPoseOffset_Click);
             // 
             // trackingFrameOffsetTextBox
             // 
-            this.trackingFrameOffsetTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::ALVR.Properties.Settings.Default, "trackingFrameOffset", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.trackingFrameOffsetTextBox.Location = new System.Drawing.Point(193, 268);
             this.trackingFrameOffsetTextBox.Name = "trackingFrameOffsetTextBox";
             this.trackingFrameOffsetTextBox.Size = new System.Drawing.Size(86, 25);
             this.trackingFrameOffsetTextBox.TabIndex = 27;
-            this.trackingFrameOffsetTextBox.Text = global::ALVR.Properties.Settings.Default.trackingFrameOffset;
             // 
             // disconnectCommandTextBox
             // 
-            this.disconnectCommandTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::ALVR.Properties.Settings.Default, "disconnectCommand", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.disconnectCommandTextBox.Location = new System.Drawing.Point(136, 220);
             this.disconnectCommandTextBox.Name = "disconnectCommandTextBox";
             this.disconnectCommandTextBox.Size = new System.Drawing.Size(383, 25);
             this.disconnectCommandTextBox.TabIndex = 25;
-            this.disconnectCommandTextBox.Text = global::ALVR.Properties.Settings.Default.disconnectCommand;
             // 
             // connectCommandTextBox
             // 
-            this.connectCommandTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::ALVR.Properties.Settings.Default, "connectCommand", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.connectCommandTextBox.Location = new System.Drawing.Point(136, 189);
             this.connectCommandTextBox.Name = "connectCommandTextBox";
             this.connectCommandTextBox.Size = new System.Drawing.Size(383, 25);
             this.connectCommandTextBox.TabIndex = 23;
-            this.connectCommandTextBox.Text = global::ALVR.Properties.Settings.Default.connectCommand;
             // 
             // onlySteamVRCheckBox
             // 
             this.onlySteamVRCheckBox.AutoSize = true;
-            this.onlySteamVRCheckBox.Checked = global::ALVR.Properties.Settings.Default.onlySteamVR;
+            this.onlySteamVRCheckBox.Checked = true;
             this.onlySteamVRCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.onlySteamVRCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::ALVR.Properties.Settings.Default, "onlySteamVR", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.onlySteamVRCheckBox.Location = new System.Drawing.Point(407, 17);
             this.onlySteamVRCheckBox.Name = "onlySteamVRCheckBox";
             this.onlySteamVRCheckBox.Size = new System.Drawing.Size(211, 15);
@@ -1392,7 +1373,7 @@
             this.metroCheckBox3.AutoSize = true;
             this.metroCheckBox3.Location = new System.Drawing.Point(281, 226);
             this.metroCheckBox3.Name = "metroCheckBox3";
-            this.metroCheckBox3.Size = new System.Drawing.Size(56, 15);
+            this.metroCheckBox3.Size = new System.Drawing.Size(57, 15);
             this.metroCheckBox3.TabIndex = 9;
             this.metroCheckBox3.Text = "Mutex";
             this.metroCheckBox3.UseVisualStyleBackColor = true;
@@ -1414,7 +1395,7 @@
             this.metroCheckBox1.AutoSize = true;
             this.metroCheckBox1.Location = new System.Drawing.Point(156, 192);
             this.metroCheckBox1.Name = "metroCheckBox1";
-            this.metroCheckBox1.Size = new System.Drawing.Size(119, 15);
+            this.metroCheckBox1.Size = new System.Drawing.Size(120, 15);
             this.metroCheckBox1.TabIndex = 9;
             this.metroCheckBox1.Text = "DebugFrameIndex";
             this.metroCheckBox1.UseVisualStyleBackColor = true;
@@ -1492,8 +1473,6 @@
             // debugCaptureOutputCheckBox
             // 
             this.debugCaptureOutputCheckBox.AutoSize = true;
-            this.debugCaptureOutputCheckBox.Checked = global::ALVR.Properties.Settings.Default.debugCaptureOutput;
-            this.debugCaptureOutputCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::ALVR.Properties.Settings.Default, "debugCaptureOutput", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.debugCaptureOutputCheckBox.Location = new System.Drawing.Point(7, 226);
             this.debugCaptureOutputCheckBox.Name = "debugCaptureOutputCheckBox";
             this.debugCaptureOutputCheckBox.Size = new System.Drawing.Size(138, 15);
@@ -1504,8 +1483,6 @@
             // debugLogCheckBox
             // 
             this.debugLogCheckBox.AutoSize = true;
-            this.debugLogCheckBox.Checked = global::ALVR.Properties.Settings.Default.debugLog;
-            this.debugLogCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::ALVR.Properties.Settings.Default, "debugLog", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.debugLogCheckBox.Location = new System.Drawing.Point(7, 192);
             this.debugLogCheckBox.Name = "debugLogCheckBox";
             this.debugLogCheckBox.Size = new System.Drawing.Size(78, 15);
@@ -1515,6 +1492,7 @@
             // 
             // aboutTab
             // 
+            this.aboutTab.Controls.Add(this.metroLabel19);
             this.aboutTab.Controls.Add(this.driverLabel);
             this.aboutTab.Controls.Add(this.uninstallButton);
             this.aboutTab.Controls.Add(this.listDriversButton);
@@ -1538,7 +1516,7 @@
             this.driverLabel.AutoSize = true;
             this.driverLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.driverLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.driverLabel.Location = new System.Drawing.Point(91, 287);
+            this.driverLabel.Location = new System.Drawing.Point(81, 287);
             this.driverLabel.Name = "driverLabel";
             this.driverLabel.Size = new System.Drawing.Size(138, 19);
             this.driverLabel.Style = MetroFramework.MetroColorStyle.Green;
@@ -1548,7 +1526,7 @@
             // 
             // uninstallButton
             // 
-            this.uninstallButton.Location = new System.Drawing.Point(164, 321);
+            this.uninstallButton.Location = new System.Drawing.Point(154, 321);
             this.uninstallButton.Name = "uninstallButton";
             this.uninstallButton.Size = new System.Drawing.Size(109, 25);
             this.uninstallButton.TabIndex = 5;
@@ -1557,7 +1535,7 @@
             // 
             // listDriversButton
             // 
-            this.listDriversButton.Location = new System.Drawing.Point(107, 355);
+            this.listDriversButton.Location = new System.Drawing.Point(97, 355);
             this.listDriversButton.Name = "listDriversButton";
             this.listDriversButton.Size = new System.Drawing.Size(98, 25);
             this.listDriversButton.TabIndex = 5;
@@ -1566,7 +1544,7 @@
             // 
             // installButton
             // 
-            this.installButton.Location = new System.Drawing.Point(46, 321);
+            this.installButton.Location = new System.Drawing.Point(36, 321);
             this.installButton.Name = "installButton";
             this.installButton.Size = new System.Drawing.Size(98, 25);
             this.installButton.TabIndex = 5;
@@ -1585,13 +1563,12 @@
             // metroLabel14
             // 
             this.metroLabel14.AutoSize = true;
-            this.metroLabel14.Location = new System.Drawing.Point(16, 55);
+            this.metroLabel14.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel14.Location = new System.Drawing.Point(36, 79);
             this.metroLabel14.Name = "metroLabel14";
-            this.metroLabel14.Size = new System.Drawing.Size(258, 152);
+            this.metroLabel14.Size = new System.Drawing.Size(205, 195);
             this.metroLabel14.TabIndex = 4;
-            this.metroLabel14.Text = "Oculus Quest Render Streaming Prototype\r\n\r\nThis is an experimental fork of ALVR \r" +
-    "\nwhich is only working on Oculus Quest.\r\n\r\nVolkswagen | Digital Realities\r\nRober" +
-    "t Schlenker (K-FIMP/5)\r\n";
+            this.metroLabel14.Text = resources.GetString("metroLabel14.Text");
             this.metroLabel14.Click += new System.EventHandler(this.metroLabel14_Click);
             // 
             // licenseTextBox
@@ -1603,12 +1580,13 @@
             this.licenseTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.licenseTextBox.Size = new System.Drawing.Size(335, 340);
             this.licenseTextBox.TabIndex = 3;
+            this.licenseTextBox.Click += new System.EventHandler(this.licenseTextBox_Click);
             // 
             // versionLabel
             // 
             this.versionLabel.AutoSize = true;
             this.versionLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.versionLabel.Location = new System.Drawing.Point(73, 16);
+            this.versionLabel.Location = new System.Drawing.Point(97, 16);
             this.versionLabel.Name = "versionLabel";
             this.versionLabel.Size = new System.Drawing.Size(110, 25);
             this.versionLabel.TabIndex = 2;
@@ -1619,11 +1597,11 @@
             // 
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel6.Location = new System.Drawing.Point(17, 16);
+            this.metroLabel6.Location = new System.Drawing.Point(18, 16);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(50, 25);
+            this.metroLabel6.Size = new System.Drawing.Size(78, 25);
             this.metroLabel6.TabIndex = 2;
-            this.metroLabel6.Text = "ALVR";
+            this.metroLabel6.Text = "AirQuest";
             this.metroLabel6.Click += new System.EventHandler(this.metroLabel6_Click);
             // 
             // metroLabel3
@@ -1658,14 +1636,46 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(83, 16);
+            this.pictureBox1.Image = global::ALVR.Properties.Resources.web_hi_res_512;
+            this.pictureBox1.Location = new System.Drawing.Point(118, 15);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(165, 51);
+            this.pictureBox1.Size = new System.Drawing.Size(48, 46);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(587, 493);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(26, 26);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(616, 491);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(74, 28);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 13;
+            this.pictureBox3.TabStop = false;
+            // 
+            // metroLabel19
+            // 
+            this.metroLabel19.AutoSize = true;
+            this.metroLabel19.ForeColor = System.Drawing.Color.Coral;
+            this.metroLabel19.Location = new System.Drawing.Point(18, 41);
+            this.metroLabel19.Name = "metroLabel19";
+            this.metroLabel19.Size = new System.Drawing.Size(246, 38);
+            this.metroLabel19.TabIndex = 7;
+            this.metroLabel19.Text = "an Oculus Quest Wifi streaming solution \r\n";
+            this.metroLabel19.Click += new System.EventHandler(this.metroLabel19_Click);
             // 
             // Launcher
             // 
@@ -1674,13 +1684,15 @@
             this.ClientSize = new System.Drawing.Size(710, 530);
             this.Controls.Add(this.startServerButton);
             this.Controls.Add(this.metroProgressSpinner1);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroTabControl1);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Launcher";
             this.Padding = new System.Windows.Forms.Padding(20, 65, 20, 22);
-            this.Text = "ALVR";
+            this.Text = "AirQuest";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Launcher_FormClosed);
             this.Load += new System.EventHandler(this.Launcher_Load);
             this.metroTabControl1.ResumeLayout(false);
@@ -1704,6 +1716,8 @@
             this.aboutTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resolutionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1836,6 +1850,9 @@
         private MetroFramework.Controls.MetroLabel ffrVerticalOffsetHelp;
         private MetroFramework.Controls.MetroLabel metroLabel23;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private MetroFramework.Controls.MetroLabel metroLabel19;
     }
 }
 

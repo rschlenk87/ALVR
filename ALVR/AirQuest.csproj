@@ -7,7 +7,7 @@
     <ProjectGuid>{EF437C2D-9F33-4A80-985D-FAFD8ABCF304}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>ALVR</RootNamespace>
-    <AssemblyName>ALVR</AssemblyName>
+    <AssemblyName>AirQuest</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -77,6 +77,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="HelloListener.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ServerConfig.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SoundDevice.cs" />
@@ -86,14 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ALVR.Properties.Settings.datasource" />
     <None Include="Properties\DataSources\ServerConfig.datasource" />
@@ -113,7 +113,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="alvr_256.ico" />
-    <None Include="Resources\alvr_256.bmp" />
+    <None Include="Resources\vwlogo.png" />
     <None Include="Resources\LICENSE.txt" />
     <None Include="Resources\alvr-128.png" />
     <None Include="Resources\web_hi_res_512.png" />

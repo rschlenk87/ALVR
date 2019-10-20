@@ -82,12 +82,21 @@ namespace ALVR.Properties {
         ///list of conditions and the following disclaimer.
         ///
         ///2. Redistributions in binary form must reproduce the above copyright notice,
-        ///this list of conditions and the following disclaimer in the documentation andor
-        /// [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        ///this list of conditions and the following disclaimer in the documenta [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
         /// </summary>
         internal static string LICENSE {
             get {
                 return ResourceManager.GetString("LICENSE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vwlogo {
+            get {
+                object obj = ResourceManager.GetObject("vwlogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
