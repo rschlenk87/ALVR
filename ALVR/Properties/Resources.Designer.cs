@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ALVR.Properties {
+namespace AirQuest.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace ALVR.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ALVR.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AirQuest.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -82,7 +82,8 @@ namespace ALVR.Properties {
         ///list of conditions and the following disclaimer.
         ///
         ///2. Redistributions in binary form must reproduce the above copyright notice,
-        ///this list of conditions and the following disclaimer in the documenta [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        ///this list of conditions and the following disclaimer in the documentation andor
+        /// [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
         /// </summary>
         internal static string LICENSE {
             get {

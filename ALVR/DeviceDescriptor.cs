@@ -5,7 +5,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ALVR
+namespace AirQuest
 {
     class DeviceDescriptor : IEquatable<DeviceDescriptor>
     {

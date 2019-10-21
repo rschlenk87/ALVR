@@ -8,7 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace ALVR
+namespace AirQuest
 {
     /// <summary>
     /// Listen broadcast hello message from client.

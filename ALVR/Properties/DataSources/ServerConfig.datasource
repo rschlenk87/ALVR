@@ -6,5 +6,5 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="ServerConfig" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>ALVR.ServerConfig, ALVR, Version=1.9.2.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
+   <TypeInfo>AirQuest.ServerConfig, AirQuest, Version=1.9.2.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>

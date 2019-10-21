@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ALVR.Properties {
+namespace AirQuest.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -20,18 +20,6 @@ namespace ALVR.Properties {
         public static Settings Default {
             get {
                 return defaultInstance;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5")]
-        public int bufferSize {
-            get {
-                return ((int)(this["bufferSize"]));
-            }
-            set {
-                this["bufferSize"] = value;
             }
         }
         
@@ -396,18 +384,6 @@ namespace ALVR.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("250")]
-        public int foveationStrength {
-            get {
-                return ((int)(this["foveationStrength"]));
-            }
-            set {
-                this["foveationStrength"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public int foveationVerticalOffset {
             get {
@@ -463,6 +439,30 @@ namespace ALVR.Properties {
             }
             set {
                 this["foveationMode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public int bufferSize {
+            get {
+                return ((int)(this["bufferSize"]));
+            }
+            set {
+                this["bufferSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("250")]
+        public int foveationStrength {
+            get {
+                return ((int)(this["foveationStrength"]));
+            }
+            set {
+                this["foveationStrength"] = value;
             }
         }
     }

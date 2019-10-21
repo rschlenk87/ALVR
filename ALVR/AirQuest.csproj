@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{EF437C2D-9F33-4A80-985D-FAFD8ABCF304}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ALVR</RootNamespace>
+    <RootNamespace>AirQuest</RootNamespace>
     <AssemblyName>AirQuest</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -95,7 +95,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\ALVR.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\AirQuest.Properties.Settings.datasource" />
     <None Include="Properties\DataSources\ServerConfig.datasource" />
     <None Include="Properties\DataSources\ServerConfig.Resolution.datasource" />
     <None Include="Properties\Settings.settings">

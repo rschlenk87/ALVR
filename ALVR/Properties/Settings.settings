@@ -2,9 +2,6 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AirQuest.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="bufferSize" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">5</Value>
-    </Setting>
     <Setting Name="enableController" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
@@ -95,9 +92,6 @@
     <Setting Name="disableController" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="foveationStrength" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">250</Value>
-    </Setting>
     <Setting Name="foveationVerticalOffset" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
@@ -112,6 +106,12 @@
     </Setting>
     <Setting Name="foveationMode" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="bufferSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="foveationStrength" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">250</Value>
     </Setting>
   </Settings>
 </SettingsFile>

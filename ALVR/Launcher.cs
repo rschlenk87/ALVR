@@ -17,7 +17,7 @@ using Codeplex.Data;
 using MetroFramework.Forms;
 using Microsoft.Win32;
 
-namespace ALVR
+namespace AirQuest
 {
     public partial class Launcher : MetroFramework.Forms.MetroForm
     {
