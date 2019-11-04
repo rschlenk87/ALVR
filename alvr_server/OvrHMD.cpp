@@ -297,9 +297,15 @@ OvrHmd::OvrHmd(std::shared_ptr<ClientConnection> listener)
 				"%s %d\n"
 				"GPU %s\n"
 				"Codec %d\n"
+				"nv12 %d\n"
 				"Bitrate %lluMbps\n"
 				"Resolution %dx%d\n"
 				"RefreshRate %d\n"
+				"bufferSize %d\n"
+				"foveationMode %d\n"
+				"foveationStrength %d\n"
+				"foveationVerticalOffset %d\n"
+				"aggressiveKeyframeResend % d\n"
 				, m_Listener->DumpConfig().c_str()
 				, k_pch_Settings_DebugLog_Bool, Settings::Instance().m_DebugLog
 				, k_pch_Settings_DebugFrameIndex_Bool, Settings::Instance().m_DebugFrameIndex
@@ -313,9 +319,16 @@ OvrHmd::OvrHmd(std::shared_ptr<ClientConnection> listener)
 				, k_pch_Settings_ControllerRecenterButton_Int32, Settings::Instance().m_controllerRecenterButton
 				, ToUTF8(m_adapterName).c_str() // TODO: Proper treatment of UNICODE. Sanitizing.
 				, Settings::Instance().m_codec
+				, Settings::Instance().m_nv12
 				, Settings::Instance().mEncodeBitrate.toMiBits()
 				, Settings::Instance().m_renderWidth, Settings::Instance().m_renderHeight
 				, Settings::Instance().m_refreshRate
+				, Settings::Instance().m_clientRecvBufferSize
+				, Settings::Instance().m_foveationMode
+				, Settings::Instance().m_foveationStrength
+				, Settings::Instance().m_foveationVerticalOffset
+				, Settings::Instance().m_aggressiveKeyframeResend
+
 			);
 			m_Listener->SendCommandResponse(buf);
 		}

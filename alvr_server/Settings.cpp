@@ -159,7 +159,6 @@ void Settings::Load()
 
 
 
-
 		if (m_DebugLog) {
 			OpenLog((m_DebugOutputDir + "\\" + LOG_FILE).c_str());
 		}
