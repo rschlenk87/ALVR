@@ -119,7 +119,7 @@ namespace AirQuest
                     driverConfig.serialNumber = "WMHD000X000XXX";
                     driverConfig.trackingSystemName = "oculus";
                     driverConfig.modelNumber = "Oculus Rift S";
-                    driverConfig.manufacturerName = "Oculus driver 1.38.0";
+                    driverConfig.manufacturerName = "Oculus";
                     driverConfig.renderModelName = "generic_hmd";
                     driverConfig.registeredDeviceType = "oculus_rifts";
                 }
@@ -210,27 +210,27 @@ namespace AirQuest
                     driverConfig.controllerType = "oculus_touch";
                     driverConfig.controllerRegisteredDeviceType = "oculus_touch";
                     driverConfig.controllerLegacyInputProfile = "oculus_touch";
-                    driverConfig.controllerInputProfilePath = "{alvr_server}/input/touch_profile.json";
+                    driverConfig.controllerInputProfilePath = "{oculus}/input/touch_profile.json";
                 }
                 else
                 {
-                    driverConfig.controllerTrackingSystemName = "ALVR Remote Controller";
-                    driverConfig.controllerManufacturerName = "ALVR";
-                    driverConfig.controllerModelNumber = "ALVR Remote Controller";
+                    driverConfig.controllerTrackingSystemName = "AirQuest Remote Controller";
+                    driverConfig.controllerManufacturerName = "AirQuest";
+                    driverConfig.controllerModelNumber = "AirQuest Remote Controller";
                     driverConfig.controllerRenderModelNameLeft = "vr_controller_vive_1_5";
                     driverConfig.controllerRenderModelNameRight = "vr_controller_vive_1_5";
-                    driverConfig.controllerSerialNumber = "ALVR Remote Controller";
+                    driverConfig.controllerSerialNumber = "AirQuest Remote Controller";
                     driverConfig.controllerType = "vive_controller";
                     driverConfig.controllerRegisteredDeviceType = "vive_controller";
                     driverConfig.controllerLegacyInputProfile = "vive_controller";
-                    driverConfig.controllerInputProfilePath = "{alvr_server}/input/vive_controller_profile.json";
+                    driverConfig.controllerInputProfilePath = "{airquest_server}/input/vive_controller_profile.json";
                 }
                 driverConfig.controllerTriggerMode = c.controllerTriggerMode;
                 driverConfig.controllerTrackpadClickMode = c.controllerTrackpadClickMode;
                 driverConfig.controllerTrackpadTouchMode = c.controllerTrackpadTouchMode;
                 driverConfig.controllerBackMode = c.controllerBackMode;
 
-                // -1=Disabled, other=ALVR Input id
+                // -1=Disabled, other=AirQuest Input id
                 driverConfig.controllerRecenterButton = recenterButtonIndex[c.controllerRecenterButton];
                 driverConfig.useTrackingReference = c.useTrackingReference;
 

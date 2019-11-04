@@ -313,7 +313,7 @@ void ClientConnection::ProcessRecv(char *buf, int len, sockaddr_in *addr) {
 		// Check signature
 		if (memcmp(message->signature, ALVR_HELLO_PACKET_SIGNATURE, sizeof(message->signature)) != 0)
 		{
-			// Non-ALVR packet or old version.
+			// Non-AirQuest packet or old version.
 			Log(L"Received packet with bad signature. sig=%08X", *(uint32_t *)message->signature);
 			return;
 		}

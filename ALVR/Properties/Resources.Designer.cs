@@ -63,9 +63,19 @@ namespace AirQuest.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap alvr_128 {
+        internal static System.Drawing.Bitmap drhub_logo_high {
             get {
-                object obj = ResourceManager.GetObject("alvr-128", resourceCulture);
+                object obj = ResourceManager.GetObject("drhub_logo_high", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap drhub_logo_low {
+            get {
+                object obj = ResourceManager.GetObject("drhub_logo_low", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -94,19 +104,9 @@ namespace AirQuest.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap vwlogo {
+        internal static System.Drawing.Bitmap vw_logo {
             get {
-                object obj = ResourceManager.GetObject("vwlogo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap web_hi_res_512 {
-            get {
-                object obj = ResourceManager.GetObject("web_hi_res_512", resourceCulture);
+                object obj = ResourceManager.GetObject("vw_logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

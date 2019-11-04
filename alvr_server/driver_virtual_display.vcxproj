@@ -14,7 +14,7 @@
     <ProjectGuid>{6FB51D67-327E-4A18-BC74-7AA6AAB4C827}</ProjectGuid>
     <RootNamespace>driver_virtual_display</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>alvr_server</ProjectName>
+    <ProjectName>airquest_server</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -102,7 +102,7 @@
     <ClCompile Include="Bitrate.cpp" />
     <ClCompile Include="CEncoder.cpp" />
     <ClCompile Include="ControlSocket.cpp" />
-    <ClCompile Include="alvr_server.cpp" />
+    <ClCompile Include="airquest_server.cpp" />
     <ClCompile Include="d3d-render-utils\RenderPipeline.cpp" />
     <ClCompile Include="d3d-render-utils\RenderUtils.cpp" />
     <ClCompile Include="DeviceQuery.cpp" />

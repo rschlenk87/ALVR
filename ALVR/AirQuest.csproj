@@ -49,7 +49,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>alvr_256.ico</ApplicationIcon>
+    <ApplicationIcon>airquest_256.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
@@ -103,6 +103,7 @@
     <Compile Include="Utils.cs" />
     <EmbeddedResource Include="Launcher.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -127,11 +128,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="alvr_256.ico" />
-    <None Include="Resources\vwlogo.png" />
+    <Content Include="airquest_256.ico" />
+    <None Include="Resources\vw_logo.png" />
     <None Include="Resources\LICENSE.txt" />
-    <None Include="Resources\alvr-128.png" />
-    <None Include="Resources\web_hi_res_512.png" />
+    <None Include="Resources\drhub_logo_low.png" />
+    <None Include="Resources\drhub_logo_high.png" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

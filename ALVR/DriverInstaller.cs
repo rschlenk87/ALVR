@@ -97,7 +97,7 @@ namespace AirQuest
         public static bool ListDrivers()
         {
             RemoveOtherDriverInstallations();
-            MessageBox.Show("installed driver list:\r\n" + string.Join("\r\n", GetDriverList()), "ALVR");
+            MessageBox.Show("installed driver list:\r\n" + string.Join("\r\n", GetDriverList()), "AirQuest");
             return true;
         }
 
@@ -109,7 +109,7 @@ namespace AirQuest
                 {
                     if (driver != Utils.GetDriverPath())
                     {
-                        MessageBox.Show("Another ALVR driver has been installed on SteamVR.\r\nUninstalling it.\r\n" + driver);
+                        MessageBox.Show("Another AirQuest driver has been installed on SteamVR.\r\nUninstalling it.\r\n" + driver);
                         UninstallDriver(driver);
                     }
                 }
@@ -121,7 +121,7 @@ namespace AirQuest
             // SteamVR can't load driver which is installed in "multibyte" path.
             if (Utils.GetDriverPath().Any(c => c > 255))
             {
-                MessageBox.Show("It seems the ALVR driver is installed in the path contains multibyte character. It will cause load error on SteamVR driver. Please install another location.");
+                MessageBox.Show("It seems the AirQuest driver is installed in the path contains multibyte character. It will cause load error on SteamVR driver. Please install another location.");
             }
         }
 

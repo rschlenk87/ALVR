@@ -103,7 +103,7 @@ namespace AirQuest
             catch (Exception e2)
             {
                 MessageBox.Show("No SteamVR installation found. Please check installation of SteamVR.\r\n" +
-                    e2.Message, "ALVR Fatal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    e2.Message, "AirQuest Fatal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
             }
 

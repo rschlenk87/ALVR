@@ -47,7 +47,7 @@ vr::EVRInitError CServerDriver_DisplayRedirect::Init( vr::IVRDriverContext *pCon
 	m_mutex = std::make_shared<IPCMutex>(APP_MUTEX_NAME, true);
 	if (m_mutex->AlreadyExist()) {
 		// Duplicate driver installation.
-		FatalLog(L"ALVR Server driver is installed on multiple locations. This causes some issues.\r\n"
+		FatalLog(L"AirQuest Server driver is installed on multiple locations. This causes some issues.\r\n"
 			"Please check the installed driver list on About tab and uninstall old drivers.");
 		return vr::VRInitError_Driver_Failed;
 	}

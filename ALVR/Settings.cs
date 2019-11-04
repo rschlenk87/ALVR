@@ -1,4 +1,4 @@
-﻿namespace ALVR.Properties {
+﻿namespace AirQuest.Properties {
     
     
     // このクラスでは設定クラスでの特定のイベントを処理することができます:

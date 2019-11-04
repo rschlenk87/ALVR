@@ -1,4 +1,4 @@
-adb shell am startservice -n "com.polygraphene.alvr/.ChangeSettings" --es "targetServers" "192.168.178.20"
-adb shell am startservice -n "com.polygraphene.alvr/.ChangeSettings" --es "targetServers" "10.29.60.211"
+adb shell am startservice -n "com.volkswagen.digitalrealities.airquest/.ChangeSettings" --es "targetServers" "192.168.178.20"
+adb shell am startservice -n "com.volkswagen.digitalrealities.airquest/.ChangeSettings" --es "targetServers" "10.29.60.211"
 "D:\VT\Volkswagen Digital Realities Hub\Volkswagen Digital Realities Hub.exe"
 "C:\Windows\System32\taskkill.exe" /IM "Volkswagen Digital Realities Hub.exe" /F

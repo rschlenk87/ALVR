@@ -9,7 +9,7 @@
 //
 // Settings
 //
-static const char * const k_pch_Settings_Section = "driver_alvr_server";
+static const char * const k_pch_Settings_Section = "driver_airquest_server";
 static const char * const k_pch_Settings_SerialNumber_String = "serialNumber";
 static const char * const k_pch_Settings_TrackingSystemName_String = "trackingSystemName";
 static const char * const k_pch_Settings_ModelNumber_String = "modelNumber";
