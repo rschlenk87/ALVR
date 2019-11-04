@@ -11,16 +11,16 @@ namespace AirQuest
 {
     class DeviceQuery
     {
-        [DllImport("kernel32.dll")]
+        [DllImport("kernel32.dll", SetLastError = true)]
         public static extern IntPtr LoadLibrary(string dllToLoad);
 
-        [DllImport("kernel32.dll")]
+        [DllImport("kernel32.dll", SetLastError = true)]
         public static extern IntPtr GetProcAddress(IntPtr hModule, string procedureName);
 
-        [DllImport("kernel32.dll")]
+        [DllImport("kernel32.dll", SetLastError = true)]
         public static extern bool FreeLibrary(IntPtr hModule);
 
-        [DllImport("kernel32.dll")]
+        [DllImport("kernel32.dll", SetLastError = true)]
         public static extern bool SetDllDirectory(string path);
 
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
@@ -43,8 +43,7 @@ namespace AirQuest
             if (pDll == IntPtr.Zero)
             {
                 int err = Marshal.GetLastWin32Error();
-                MessageBox.Show("Cannot load library. AirQuest works only on 64bits Windows with NVIDIA GPU.\r\n" + Utils.GetDllPath(Utils.GetDriverPath()) + "\r\nCode:" + err);
-                throw new Exception();
+                 MessageBox.Show("Cannot load library. AirQuest works only on 64bits Windows and requires latest Visual C++ 2015 Redistributable (vcredist) .\r\n" + Utils.GetDllPath(Utils.GetDriverPath()) + "\r\nCode:" + err);                throw new Exception();
             }
 
             IntPtr GetSoundDevicesAddr = GetProcAddress(pDll, "GetSoundDevices");
