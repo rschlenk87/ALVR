@@ -232,7 +232,7 @@
             this.metroTabControl1.Controls.Add(this.aboutTab);
             this.metroTabControl1.Location = new System.Drawing.Point(23, 68);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 5;
             this.metroTabControl1.Size = new System.Drawing.Size(664, 450);
             this.metroTabControl1.TabIndex = 8;
             // 
@@ -429,7 +429,7 @@
             this.autoConnectCheckBox.AutoSize = true;
             this.autoConnectCheckBox.Location = new System.Drawing.Point(73, 221);
             this.autoConnectCheckBox.Name = "autoConnectCheckBox";
-            this.autoConnectCheckBox.Size = new System.Drawing.Size(148, 15);
+            this.autoConnectCheckBox.Size = new System.Drawing.Size(147, 15);
             this.autoConnectCheckBox.TabIndex = 13;
             this.autoConnectCheckBox.Text = "Auto connect next time";
             this.autoConnectCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -607,7 +607,7 @@
             // 
             this.forceNV12.AutoSize = true;
             this.forceNV12.Checked = global::AirQuest.Properties.Settings.Default.nv12;
-            this.forceNV12.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::AirQuest.Properties.Settings.Default, "nv12", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged)); 
+            this.forceNV12.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::AirQuest.Properties.Settings.Default, "nv12", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.forceNV12.Location = new System.Drawing.Point(476, 21);
             this.forceNV12.Name = "forceNV12";
             this.forceNV12.Size = new System.Drawing.Size(72, 15);
@@ -955,7 +955,7 @@
             // foveationVerticalOffsetTrackBar
             // 
             this.foveationVerticalOffsetTrackBar.BackColor = System.Drawing.Color.Transparent;
-            this.foveationVerticalOffsetTrackBar.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::AirQuest.Properties.Settings.Default, "foveationVerticalOffset", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged)); 
+            this.foveationVerticalOffsetTrackBar.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::AirQuest.Properties.Settings.Default, "foveationVerticalOffset", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.foveationVerticalOffsetTrackBar.LargeChange = 2;
             this.foveationVerticalOffsetTrackBar.Location = new System.Drawing.Point(185, 343);
             this.foveationVerticalOffsetTrackBar.Maximum = 10;
@@ -1083,6 +1083,7 @@
             // 
             this.streamMic.AutoSize = true;
             this.streamMic.Checked = global::AirQuest.Properties.Settings.Default.streamMic;
+            this.streamMic.CheckState = System.Windows.Forms.CheckState.Checked;
             this.streamMic.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::AirQuest.Properties.Settings.Default, "streamMic", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.streamMic.Location = new System.Drawing.Point(30, 193);
             this.streamMic.Name = "streamMic";
@@ -1260,7 +1261,7 @@
             // 
             this.force60HzCheckBox.AutoSize = true;
             this.force60HzCheckBox.Checked = global::AirQuest.Properties.Settings.Default.force60Hz;
-            this.force60HzCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::AirQuest.Properties.Settings.Default, "force60Hz", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged)); 
+            this.force60HzCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::AirQuest.Properties.Settings.Default, "force60Hz", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.force60HzCheckBox.Location = new System.Drawing.Point(407, 59);
             this.force60HzCheckBox.Name = "force60HzCheckBox";
             this.force60HzCheckBox.Size = new System.Drawing.Size(81, 15);
@@ -1272,6 +1273,7 @@
             // 
             this.aggressiveKeyframeResend.AutoSize = true;
             this.aggressiveKeyframeResend.Checked = global::AirQuest.Properties.Settings.Default.aggressiveKeyframeResend;
+            this.aggressiveKeyframeResend.CheckState = System.Windows.Forms.CheckState.Checked;
             this.aggressiveKeyframeResend.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::AirQuest.Properties.Settings.Default, "aggressiveKeyframeResend", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.aggressiveKeyframeResend.Location = new System.Drawing.Point(407, 144);
             this.aggressiveKeyframeResend.Name = "aggressiveKeyframeResend";
@@ -1358,6 +1360,7 @@
             // 
             this.onlySteamVRCheckBox.AutoSize = true;
             this.onlySteamVRCheckBox.Checked = global::AirQuest.Properties.Settings.Default.onlySteamVR;
+            this.onlySteamVRCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.onlySteamVRCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::AirQuest.Properties.Settings.Default, "onlySteamVR", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.onlySteamVRCheckBox.Location = new System.Drawing.Point(407, 17);
             this.onlySteamVRCheckBox.Name = "onlySteamVRCheckBox";
@@ -1420,7 +1423,7 @@
             this.metroCheckBox3.AutoSize = true;
             this.metroCheckBox3.Location = new System.Drawing.Point(281, 226);
             this.metroCheckBox3.Name = "metroCheckBox3";
-            this.metroCheckBox3.Size = new System.Drawing.Size(57, 15);
+            this.metroCheckBox3.Size = new System.Drawing.Size(56, 15);
             this.metroCheckBox3.TabIndex = 9;
             this.metroCheckBox3.Text = "Mutex";
             this.metroCheckBox3.UseVisualStyleBackColor = true;
@@ -1442,7 +1445,7 @@
             this.metroCheckBox1.AutoSize = true;
             this.metroCheckBox1.Location = new System.Drawing.Point(156, 192);
             this.metroCheckBox1.Name = "metroCheckBox1";
-            this.metroCheckBox1.Size = new System.Drawing.Size(120, 15);
+            this.metroCheckBox1.Size = new System.Drawing.Size(119, 15);
             this.metroCheckBox1.TabIndex = 9;
             this.metroCheckBox1.Text = "DebugFrameIndex";
             this.metroCheckBox1.UseVisualStyleBackColor = true;
@@ -1628,7 +1631,7 @@
             this.metroLabel14.FontSize = MetroFramework.MetroLabelSize.Small;
             this.metroLabel14.Location = new System.Drawing.Point(36, 79);
             this.metroLabel14.Name = "metroLabel14";
-            this.metroLabel14.Size = new System.Drawing.Size(209, 195);
+            this.metroLabel14.Size = new System.Drawing.Size(209, 210);
             this.metroLabel14.TabIndex = 4;
             this.metroLabel14.Text = resources.GetString("metroLabel14.Text");
             this.metroLabel14.Click += new System.EventHandler(this.metroLabel14_Click);

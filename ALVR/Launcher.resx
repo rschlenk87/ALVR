@@ -145,9 +145,10 @@ that is only working on Oculus Quest.
 + Aggressive keyframe resend
 + Configureable clients (CloudVR)
 + Option to launch SteamVR only
++ nv12 color profile support
 
 Volkswagen AG | Digital Realities
-Robert Schlenker (K-FIMP/5)
+Robert Schlenker (K-FIKP)
 </value>
   </data>
   <metadata name="resolutionBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
