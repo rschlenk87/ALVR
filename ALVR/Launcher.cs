@@ -44,6 +44,7 @@ namespace AirQuest
 
             InitializeComponent();
             initComponents = false;
+
         }
 
         private void Launcher_Load(object sender, EventArgs e)
@@ -83,12 +84,13 @@ namespace AirQuest
             //
 
             codecComboBox.Items.AddRange(ServerConfig.supportedCodecs);
+
             LoadSettings();
 
             config.Save(null);
 
-         
-   
+
+
 
             //
             // Driver check
@@ -132,23 +134,32 @@ namespace AirQuest
                 "A resolution lower than 100% can reduce latency and network perfomance\n" +
                 "Resolutions below 100% require the codec to be h264 wo work properly");
 
-            toolTip1.SetToolTip(this.bufferHelp, "Buffer size on client side\n 200kB is recommended.If you experience packet loss, enlarge buffer.");
+            toolTip1.SetToolTip(this.bufferHelp, "Buffer size on client side\n Depends on the bitrate\n Calculated size is recommended. If you experience packet loss, enlarge buffer.");
+            toolTip1.SetToolTip(this.bufferOffsetHelp, "Offset to increase or decrease the calculated buffer size. Buffer can not be negative");
+
             toolTip1.SetToolTip(this.ffrHelp, "Technique where the center of the image is rendered in high resolution while the outskirts are rendered in lower resolution\n" +
                 "Results in a much lower video resolution that needs to be transmitted over the network. \n" +
                 "The smaller video at the same bitrate can preserve more details and lowers the latency at the same time \n" +
                 "FFR causes some visual artefacts at the edges of the view that are more or lesse visible depending on the settings and the game");
 
             toolTip1.SetToolTip(this.ffrStrengthHelp, "Range 0 - 5\n" +
-                "higher value means less detail toward the edges of the frame and more artefacts");
-            
+                "Higher value means less detail toward the edges of the frame and more artefacts");
+
             toolTip1.SetToolTip(this.ffrVerticalOffsetHelp, "Range -0.1 - 0.1\n" +
-                "higher value means the high quality frame region is moved further down");
+                "Higher value means the high quality frame region is moved further down");
 
             toolTip1.SetToolTip(this.aggressiveKeyframeResendHelp, "Decrease minimum interval between keyframes from 100 ms to 5 ms. \n" +
                 "Used only when packet loss is detected. Improves experience on networks with packet loss.");
 
-            toolTip1.SetToolTip(this.nv12Tooltip, "Use NV12 color space instead of RGB. \n" +
-               "May create more efficient video. NV12 is always used on Windows 7");
+            toolTip1.SetToolTip(this.nv12Tooltip, "Use custom NV12 color space conversion. \n" +
+               "May create more efficient video. This is always used on Windows 7");
+
+            toolTip1.SetToolTip(this.colorCorrectionHelp, "The color transformations are applied in the order: gamma, brightness, contrast, saturation.\n\n" +
+                "Gamma: range [0;5], default 1. Use a value of 2.2 to correct color from sRGB to RGB space.\n" +
+                "Brightness: range [-1;1], default 0. -1 is completely black and 1 is completely white.\n" +
+                "Contrast: range [-1;1], default 0. -1 is completely gray.\n" +
+                "Saturation: range [-1;1], default 0. -1 is black and white.");
+
 
 
 
@@ -215,7 +226,7 @@ namespace AirQuest
         private void SaveSettings()
         {
             var c = Properties.Settings.Default;
-      
+
             trackingFrameOffsetTextBox.Text = Utils.ParseInt(trackingFrameOffsetTextBox.Text).ToString();
 
             if (resolutionComboBox.SelectedIndex != -1)
@@ -240,7 +251,7 @@ namespace AirQuest
             c.autoConnectList = clientList.Serialize();
 
             c.codec = codecComboBox.SelectedIndex;
-           
+
 
             if (soundDevices.Count > 0)
             {
@@ -353,6 +364,7 @@ namespace AirQuest
             }
             else
             {
+
                 if (currentClient != null)
                 {
                     metroLabel3.Text = "Server is down";
@@ -427,6 +439,7 @@ namespace AirQuest
         private void UpdateClients()
         {
             clientList.Refresh();
+            dataGridView1.ScrollBars = ScrollBars.None;
 
             foreach (var row in dataGridView1.Rows.Cast<DataGridViewRow>())
             {
@@ -547,9 +560,9 @@ namespace AirQuest
                 driverLabel.Style = MetroFramework.MetroColorStyle.Red;
             }
         }
-  
 
-       
+
+
 
         private void UpdateConnectionState(bool connected, string args = "")
         {
@@ -587,7 +600,7 @@ namespace AirQuest
 
         private void UpdateSoundCheckboxState()
         {
-          
+
             if (soundDevices.Count == 0)
             {
                 soundCheckBox.Hide();
@@ -655,11 +668,14 @@ namespace AirQuest
         {
             await socket.SendCommand("SetConfig captureComposedDDS 1");
         }
-      
+
 
         private void bitrateTrackBar_ValueChanged(object sender, EventArgs e)
         {
             bitrateLabel.Text = bitrateTrackBar.Value + "Mbps";
+            bufferLabel.Text = config.GetBufferSizeKB() + "kB";
+
+
         }
 
         async private void sendClientDebugFlagsButton_Click(object sender, EventArgs e)
@@ -701,6 +717,7 @@ namespace AirQuest
         private void bufferTrackBar_ValueChanged(object sender, EventArgs e)
         {
             bufferLabel.Text = config.GetBufferSizeKB() + "kB";
+            bufferOffsetLabel.Text = bufferTrackBar.Value + "kB";
         }
 
         private void installButton_Click(object sender, EventArgs e)
@@ -716,9 +733,9 @@ namespace AirQuest
 
             CheckDriverInstallStatus();
         }
-              
 
-      
+
+
 
         private void disconnectButton_Click(object sender, EventArgs e)
         {
@@ -747,7 +764,7 @@ namespace AirQuest
             SaveSettings();
         }
 
-        async private void 
+        async private void
             autoConnectCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (autoConnectCheckBox.Checked)
@@ -923,41 +940,54 @@ namespace AirQuest
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
         private void versionLabel_Click(object sender, EventArgs e)
+        private void tableLayoutPanel7_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
         private void metroLabel6_Click(object sender, EventArgs e)
+        private void wrongVersionLabel_Click(object sender, EventArgs e)
         {
 
         }
 
         private void metroLabel14_Click(object sender, EventArgs e)
+        private void tableLayoutPanel7_Paint_1(object sender, PaintEventArgs e)
         {
 
         }
 
         private void serverTab_Click(object sender, EventArgs e)
+        private void statDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
+        private void tableLayoutPanel11_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
         private void metroLabel19_Click(object sender, EventArgs e)
+        private void debugTab_Click(object sender, EventArgs e)
         {
 
         }
 
         private void licenseTextBox_Click(object sender, EventArgs e)
+        private void bitrateTrackBar_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void bufferTrackBar_Scroll(object sender, ScrollEventArgs e)
         {
 
         }

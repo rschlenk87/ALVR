@@ -62,8 +62,8 @@ vr::EVRInitError OvrController::Activate(vr::TrackedDeviceIndex_t unObjectId)
 
 	vr::VRProperties()->SetStringProperty(m_ulPropertyContainer, vr::Prop_SerialNumber_String, GetSerialNumber().c_str());
 	vr::VRProperties()->SetStringProperty(m_ulPropertyContainer, vr::Prop_AttachedDeviceId_String, GetSerialNumber().c_str());
- 	vr::VRProperties()->SetStringProperty(m_ulPropertyContainer, vr::Prop_RegisteredDeviceType_String, m_isLeftHand ? (Settings::Instance().mControllerRegisteredDeviceType + "_Left").c_str() : (Settings::Instance().mControllerRegisteredDeviceType + "_Right").c_str() );
-	
+	vr::VRProperties()->SetStringProperty(m_ulPropertyContainer, vr::Prop_RegisteredDeviceType_String, m_isLeftHand ? (Settings::Instance().mControllerRegisteredDeviceType + "_Left").c_str() : (Settings::Instance().mControllerRegisteredDeviceType + "_Right").c_str() );
+
 	uint64_t supportedButtons = 0xFFFFFFFFFFFFFFFFULL;
 	vr::VRProperties()->SetUint64Property(m_ulPropertyContainer, vr::Prop_SupportedButtons_Uint64, supportedButtons);
 
@@ -171,18 +171,18 @@ bool OvrController::onPoseUpdate(int controllerIndex, const TrackingInfo &info) 
 	if (m_unObjectId == vr::k_unTrackedDeviceIndexInvalid) {
 		return false;
 	}
-	
+
 	m_pose.qRotation = HmdQuaternion_Init(info.controller[controllerIndex].orientation.w,
 		info.controller[controllerIndex].orientation.x,
 		info.controller[controllerIndex].orientation.y,
 		info.controller[controllerIndex].orientation.z);   //controllerRotation;
-		
+
 
 	m_pose.vecPosition[0] = info.controller[controllerIndex].position.x;
 	m_pose.vecPosition[1] = info.controller[controllerIndex].position.y;
 	m_pose.vecPosition[2] = info.controller[controllerIndex].position.z;
 
-	
+
 
 	m_pose.vecVelocity[0] = info.controller[controllerIndex].linearVelocity.x;
 	m_pose.vecVelocity[1] = info.controller[controllerIndex].linearVelocity.y;
@@ -196,9 +196,9 @@ bool OvrController::onPoseUpdate(int controllerIndex, const TrackingInfo &info) 
 	//m_pose.vecAngularAcceleration[0] = info.controller[controllerIndex].angularAcceleration.x;
 	//m_pose.vecAngularAcceleration[1] = info.controller[controllerIndex].angularAcceleration.y;
 	//m_pose.vecAngularAcceleration[2] = info.controller[controllerIndex].angularAcceleration.z;
-	
-	
-	
+
+
+
 	//correct direction of velocities
 	vr::HmdVector3d_t angVel;
 	angVel.v[0] = m_pose.vecAngularVelocity[0];
@@ -208,7 +208,7 @@ bool OvrController::onPoseUpdate(int controllerIndex, const TrackingInfo &info) 
 	m_pose.vecAngularVelocity[0] = angVelRes.v[0];
 	m_pose.vecAngularVelocity[1] = angVelRes.v[1];
 	m_pose.vecAngularVelocity[2] = angVelRes.v[2];
-	
+
 
 
 
@@ -222,11 +222,11 @@ bool OvrController::onPoseUpdate(int controllerIndex, const TrackingInfo &info) 
 	m_pose.vecVelocity[1] = velRes.v[1];
 	m_pose.vecVelocity[2] = velRes.v[2];
 	*/
-	
+
 
 	Log(L"CONTROLLER %d %f,%f,%f - %f,%f,%f", m_index, m_pose.vecVelocity[0], m_pose.vecVelocity[1], m_pose.vecVelocity[2], m_pose.vecAngularVelocity[0], m_pose.vecAngularVelocity[1], m_pose.vecAngularVelocity[2]);
-	
-	
+
+
 
 	/*
 	double rotation[3] = { 0.0, 0.0, 36 * M_PI / 180 };
@@ -234,7 +234,7 @@ bool OvrController::onPoseUpdate(int controllerIndex, const TrackingInfo &info) 
 	m_pose.vecDriverFromHeadTranslation[1] = 0.031153;
 	m_pose.vecDriverFromHeadTranslation[2] = -0.042878;
 
-	
+
 
 	//double r[3] = { 0, -0.031153 ,0.042878 };
 	double r[3] = { 0, 0 ,-0.053 };
@@ -252,11 +252,11 @@ bool OvrController::onPoseUpdate(int controllerIndex, const TrackingInfo &info) 
 	m_pose.vecVelocity[1] = m_pose.vecVelocity[1] + tmp[1];
 	m_pose.vecVelocity[2] = m_pose.vecVelocity[2] + tmp[2];
 	*/
-	
+
 
 	m_pose.poseTimeOffset = Settings::Instance().m_controllerPoseOffset;
 
-	   
+
 
 	auto& c = info.controller[controllerIndex];
 	Log(L"Controller%d %d %lu: %08llX %08X %f:%f", m_index,controllerIndex, (unsigned long)m_unObjectId, c.buttons, c.flags, c.trackpadPosition.x, c.trackpadPosition.y);
@@ -300,11 +300,11 @@ bool OvrController::onPoseUpdate(int controllerIndex, const TrackingInfo &info) 
 	vr::VRDriverInput()->UpdateBooleanComponent(m_handles[ALVR_INPUT_TRIGGER_TOUCH], (c.buttons & ALVR_BUTTON_FLAG(ALVR_INPUT_TRIGGER_TOUCH)) != 0, 0.0);
 
 
-	
+
 
 	// Battery
 	vr::VRProperties()->SetFloatProperty(m_ulPropertyContainer, vr::Prop_DeviceBatteryPercentage_Float, c.batteryPercentRemaining / 100.0f);
-	
+
 	vr::VRServerDriverHost()->TrackedDevicePoseUpdated(m_unObjectId, m_pose, sizeof(vr::DriverPose_t));
 
 

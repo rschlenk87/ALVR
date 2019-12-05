@@ -95,12 +95,12 @@ namespace AirQuest
 
         public int GetBufferSizeKB()
         {
-            if (Properties.Settings.Default.bufferSize == 5)
+            int buffer = Properties.Settings.Default.bitrate * 2 + Properties.Settings.Default.bufferOffset;
+            if(buffer < 0)
             {
-                return 200;
+                buffer = 0;
             }
-            // Map 0 - 100 to 100kB - 2000kB
-            return Properties.Settings.Default.bufferSize * 1900 / 100 + 100;
+            return buffer;
         }
 
         public int GetFrameQueueSize(bool suppressFrameDrop)
@@ -122,6 +122,7 @@ namespace AirQuest
                 driverConfig.renderModelName = "generic_hmd";
                 driverConfig.registeredDeviceType = "oculus/1WMGH000XX0000";
                 driverConfig.driverVersion = "1.42.0";
+
                 driverConfig.adapterIndex = 0;
                 driverConfig.IPD = 0.063;
                 driverConfig.secondsFromVsyncToPhotons = 0.005;
@@ -150,7 +151,7 @@ namespace AirQuest
                 }
                 else
                 {
-                   
+
                     driverConfig.refreshRate = device.RefreshRates[0] == 0 ? DEFAULT_REFRESHRATE : device.RefreshRates[0];
                     if(c.force60Hz)
                     {
@@ -189,15 +190,18 @@ namespace AirQuest
 
                 driverConfig.disableController = c.disableController;
 
+
+
                 driverConfig.controllerTrackingSystemName = "oculus";
-                driverConfig.controllerSerialNumber = "1WMGH000XX0000_Controller"; //requeres _Left & _Right
-                driverConfig.controllerModelNumber = "Oculus Rift S"; //requeres (Left Controller) & (Right Controller)
+                driverConfig.controllerSerialNumber = "1WMGH000XX0000_Controller"; //requires _Left & _Right
+                driverConfig.controllerModelNumber = "Oculus Rift S"; //requires (Left Controller) & (Right Controller)
                 driverConfig.controllerManufacturerName = "Oculus";
                 driverConfig.controllerRenderModelNameLeft = "oculus_rifts_controller_left";
                 driverConfig.controllerRenderModelNameRight = "oculus_rifts_controller_right";
-                driverConfig.controllerRegisteredDeviceType = "oculus/1WMGH000XX0000_Controller"; //requeres _Left & _Right
+                driverConfig.controllerRegisteredDeviceType = "oculus/1WMGH000XX0000_Controller"; //requires _Left & _Right
                 driverConfig.controllerInputProfilePath = "{oculus}/input/touch_profile.json";
                 driverConfig.controllerType = "oculus_touch";
+
 
                 driverConfig.controllerTriggerMode = c.controllerTriggerMode;
                 driverConfig.controllerTrackpadClickMode = c.controllerTrackpadClickMode;
@@ -220,6 +224,12 @@ namespace AirQuest
                 driverConfig.foveationStrength = c.foveationStrength / 100f;
                 driverConfig.foveationShape = 1.5f;
                 driverConfig.foveationVerticalOffset = c.foveationVerticalOffset / 100f;
+
+                driverConfig.enableColorCorrection = c.enableColorCorrection;
+                driverConfig.brightness = (float)c.brightness;
+                driverConfig.contrast = (float)c.contrast;
+                driverConfig.saturation = (float)c.saturation;
+                driverConfig.gamma = (float)c.gamma;
 
 
                 byte[] bytes = Encoding.UTF8.GetBytes(driverConfig.ToString());

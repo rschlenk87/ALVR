@@ -62,7 +62,7 @@ OvrHmd::OvrHmd(std::shared_ptr<ClientConnection> listener)
 			m_D3DRender.reset();
 		}
 
-	
+
 	}
 
 
@@ -106,7 +106,7 @@ OvrHmd::OvrHmd(std::shared_ptr<ClientConnection> listener)
 		vr::VRProperties()->SetStringProperty(m_ulPropertyContainer, vr::Prop_ManufacturerName_String, Settings::Instance().mManufacturerName.c_str());
 		vr::VRProperties()->SetStringProperty(m_ulPropertyContainer, vr::Prop_RenderModelName_String, Settings::Instance().mRenderModelName.c_str());
 		vr::VRProperties()->SetStringProperty(m_ulPropertyContainer, vr::Prop_RegisteredDeviceType_String, Settings::Instance().mRegisteredDeviceType.c_str());
- 		vr::VRProperties()->SetStringProperty(m_ulPropertyContainer, vr::Prop_DriverVersion_String, Settings::Instance().mDriverVersion.c_str());
+		vr::VRProperties()->SetStringProperty(m_ulPropertyContainer, vr::Prop_DriverVersion_String, Settings::Instance().mDriverVersion.c_str());
 		vr::VRProperties()->SetFloatProperty(m_ulPropertyContainer, vr::Prop_UserIpdMeters_Float, Settings::Instance().m_flIPD);
 		vr::VRProperties()->SetFloatProperty(m_ulPropertyContainer, vr::Prop_UserHeadToEyeDepthMeters_Float, 0.f);
 		vr::VRProperties()->SetFloatProperty(m_ulPropertyContainer, vr::Prop_DisplayFrequency_Float, static_cast<float>(Settings::Instance().m_refreshRate));
@@ -171,7 +171,7 @@ OvrHmd::OvrHmd(std::shared_ptr<ClientConnection> listener)
 		m_VSyncThread = std::make_shared<VSyncThread>(Settings::Instance().m_refreshRate);
 		m_VSyncThread->Start();
 
-	
+
 
 		m_displayComponent = std::make_shared<OvrDisplayComponent>();
 		m_directModeComponent = std::make_shared<OvrDirectModeComponent>(m_D3DRender, m_encoder, m_Listener);
@@ -182,7 +182,7 @@ OvrHmd::OvrHmd(std::shared_ptr<ClientConnection> listener)
 		return vr::VRInitError_None;
 	}
 
-	 void OvrHmd::Deactivate() 
+	 void OvrHmd::Deactivate()
 	{
 		Log(L"CRemoteHmd Deactivate");
 		mActivated = false;
@@ -234,11 +234,11 @@ OvrHmd::OvrHmd(std::shared_ptr<ClientConnection> listener)
 
 
 			pose.qRotation = HmdQuaternion_Init(info.HeadPose_Pose_Orientation.w,
-				info.HeadPose_Pose_Orientation.x, 
+				info.HeadPose_Pose_Orientation.x,
 				info.HeadPose_Pose_Orientation.y,
 				info.HeadPose_Pose_Orientation.z);
 
-			
+
 			pose.vecPosition[0] = info.HeadPose_Pose_Position.x;
 			pose.vecPosition[1] = info.HeadPose_Pose_Position.y;
 			pose.vecPosition[2] = info.HeadPose_Pose_Position.z;
@@ -417,7 +417,7 @@ OvrHmd::OvrHmd(std::shared_ptr<ClientConnection> listener)
 			if (!m_added || !mActivated) {
 				return;
 			}
-			
+
 			TrackingInfo info;
 			m_Listener->GetTrackingInfo(info);
 
@@ -428,15 +428,15 @@ OvrHmd::OvrHmd(std::shared_ptr<ClientConnection> listener)
 			}
 
 			m_directModeComponent->OnPoseUpdated(info);
-		
+
 			vr::VRServerDriverHost()->TrackedDevicePoseUpdated(m_unObjectId, GetPose(), sizeof(vr::DriverPose_t));
 
 		}
 	}
 
 	void OvrHmd::updateController(const TrackingInfo& info) {
-		
-		
+
+
 		//haptic feedback
 		double  hapticFeedbackLeft[3]{0,0,0};
 		double  hapticFeedbackRight[3]{ 0,0,0 };
@@ -449,31 +449,31 @@ OvrHmd::OvrHmd(std::shared_ptr<ClientConnection> listener)
 			{
 
 				// if multiple events occurred within one frame, they are ignored except for last event
-				
+
 					if (m_leftController->getHapticComponent() == vrEvent.data.hapticVibration.componentHandle) {
-					
+
 						hapticFeedbackLeft[0] = vrEvent.data.hapticVibration.fAmplitude;
 						hapticFeedbackLeft[1] = vrEvent.data.hapticVibration.fDurationSeconds;
 						hapticFeedbackLeft[2] = vrEvent.data.hapticVibration.fFrequency;
 
 					} else if (m_rightController->getHapticComponent() == vrEvent.data.hapticVibration.componentHandle) {
-					
+
 						hapticFeedbackRight[0] = vrEvent.data.hapticVibration.fAmplitude;
 						hapticFeedbackRight[1] = vrEvent.data.hapticVibration.fDurationSeconds;
 						hapticFeedbackRight[2] = vrEvent.data.hapticVibration.fFrequency;
 					}
-				
+
 			}
 		}
 
-		
+
 
 
 		//send feedback if changed
 		if (hapticFeedbackLeft[0] != 0 ||
 			hapticFeedbackLeft[1] != 0 ||
 			hapticFeedbackLeft[2] != 0 ) {
-	
+
 			m_Listener->SendHapticsFeedback(0,
 				static_cast<float>(hapticFeedbackLeft[0]),
 				static_cast<float>(hapticFeedbackLeft[1]),
@@ -481,13 +481,13 @@ OvrHmd::OvrHmd(std::shared_ptr<ClientConnection> listener)
 				m_leftController->GetHand() ? 1 : 0);
 
 		}
-		
-		
+
+
 		if (hapticFeedbackRight[0] != 0 ||
 			hapticFeedbackRight[1] != 0 ||
 			hapticFeedbackRight[2] != 0) {
 
-	
+
 			m_Listener->SendHapticsFeedback(0,
 				static_cast<float>(hapticFeedbackRight[0]),
 				static_cast<float>(hapticFeedbackRight[1]),
@@ -495,14 +495,14 @@ OvrHmd::OvrHmd(std::shared_ptr<ClientConnection> listener)
 				m_rightController->GetHand() ? 1 : 0);
 
 		}
-		
-		
+
+
 		//Update controller
 
-		for (int i = 0; i < 2; i++) {	
+		for (int i = 0; i < 2; i++) {
 
 			bool leftHand = (info.controller[i].flags & TrackingInfo::Controller::FLAG_CONTROLLER_LEFTHAND) != 0;
-		
+
 			if (leftHand) {
 				m_leftController->onPoseUpdate(i, info);
 			} else {
@@ -510,8 +510,8 @@ OvrHmd::OvrHmd(std::shared_ptr<ClientConnection> listener)
 			}
 
 		}
-		
-		
+
+
 	}
 
 	void OvrHmd::OnNewClient() {
